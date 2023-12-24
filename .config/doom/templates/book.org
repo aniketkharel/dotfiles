@@ -1,0 +1,11 @@
+#+title: Book Template
+
+* Source
+
+Author: %^{Author}
+Title: ${title}
+Year: %^{Year}
+
+* Summary
+
+%?

@@ -1,0 +1,16 @@
+{
+  "include": "~/.config/hypr/waybar/modules",
+  "layer": "top",
+  //"mode": "dock",
+  "exclusive": true,
+  "passthrough": false,
+  "position": "top",
+  "spacing": 2,
+  "fixed-center": true,
+  "height":10,
+  "ipc": true,
+  "margin-left": 0,
+  "margin-right": 0,
+  "modules-left": ["wlr/workspaces", "cpu", "memory", "disk", "temperature", "hyprland/window"],
+  "modules-right": ["custom/cycle_wall", "network" ,"custom/updater", "pulseaudio", "backlight", "battery", "clock", "custom/power", "tray"],
+}

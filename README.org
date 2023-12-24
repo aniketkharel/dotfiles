@@ -1,0 +1,64 @@
+#+title: dot.org
+#+email: aniketkhareldev@gmail.com
+
+First, install all the required programs using /install.sh/ script.
+Using _stow_, you can symlink all dotfiles to your /$HOME/ directory.
+
+* Programs
+
+Some programs that I used for my daily workflow.
+
+| S.N | Programs               | Category       |
+| --- | ---------------------- | -------------- |
+|   1 | i3, i3bar and i3blocks | Window Manager |
+|   2 | kitty                  | Terminal       |
+|   3 | neovim                 | Modal Editor   |
+|   4 | Doom Emacs             | As an OS :D    |
+
+* Fonts
+
+These are all monospace [[nerdfonts.com][nerdfonts.com]].
+
+1. [[https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip][JetBrainsMono Nerd Font]]
+
+* Extra Dependencies
+
+1. [autotiling](https://github.com/nwg-piotr/autotiling)
+2. [rofi-emoji](https://github.com/Mange/rofi-emojirofi-emoji)
+3. [greenclip](https://github.com/Mange/rofi-emoji)
+4. [tomate-gtk](https://github.com/eliostvs/tomate-gtk)
+
+* Preparation
+
+#+begin_src sh
+./install.sh
+#+end_src
+
+Using stow to symlink files.
+
+#+begin_src sh
+
+stow -D . #to delete all the existing symlinks
+
+# to symlink all files and folders
+stow .
+
+#+end_src
+
+* References
+
+- [systemcrafters.net](https://systemcrafters.net/managing-your-dotfiles/using-gnu-stow/)
+- [polybar-themes](https://github.com/adi1090x/polybar-themes)
+- [dotfiles/github](https://github.com/daviwil/emacs-from-scratch/blob/tips-clean/init.el)
+- [System Crafters](https://youtu.be/INTu30BHZGk?t=984)
+- [Papirus Icons](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme#installation)
+- [xmodmap-mapping](https://unix.stackexchange.com/questions/565467/xmodmap-attach-alt-r-to-mod3-group)
+- [map-alt-h-j-k-l](https://askubuntu.com/questions/1359536/bind-alt-wasd-to-arrow-keys)
+- [map-alt-h-j-k-l-2](https://askubuntu.com/questions/1025765/how-to-map-alt-hjkl-keys-to-arrow-keys)
+- [map-alt-h-j-k-l-3](https://superuser.com/questions/277990/how-do-i-swap-alt-and-windows-keys-with-xmodmap)
+- [remapping-keys](https://askubuntu.com/questions/296155/how-can-i-remap-keyboard-keys/296437#296437)
+- [markdown-preview-issue](https://github.com/iamcco/markdown-preview.nvim/issues/582)
+- [tmux-gruvbox-dark](https://github.com/egel/tmux-gruvbox/blob/main/tmux-gruvbox-dark.conf)
+- [i3wm-solarized-dark-theme](https://github.com/tobiaszwaszak/i3wm/blob/master/config)
+- [status-line-config][https://www.sainnhe.dev/post/status-line-config/]
+- https://github.com/sainnhe/icursive-nerd-font/tree/master

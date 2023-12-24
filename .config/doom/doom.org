@@ -1,0 +1,778 @@
+#+title: Emacs Configuration
+#+email: aniketkhareldev@gmail.com
+#+PROPERTY reader-args:emacs-lisp :tangle ./config.el :mkdirp yes
+
+Welcome ! This is my doom emacs configurations, where i tangle everything up.
+
+* Table of Contents :toc:
+- [[#initialization][Initialization]]
+- [[#optimization][Optimization]]
+- [[#identities][Identities]]
+- [[#global-variables][Global Variables]]
+- [[#custom-variables][Custom Variables]]
+- [[#user-interface][User Interface]]
+  - [[#dashboard][Dashboard]]
+  - [[#fonts][Fonts]]
+  - [[#theme][Theme]]
+  - [[#line-numbers][Line Numbers]]
+  - [[#transparency-and-alphas][Transparency and Alphas]]
+  - [[#visual-fill-column][Visual Fill Column]]
+- [[#eighty-column-rule][Eighty Column Rule]]
+- [[#rainbow-mode][Rainbow Mode]]
+- [[#editorconfig][Editorconfig]]
+- [[#org-mode][Org Mode]]
+  - [[#basic][Basic]]
+  - [[#superstar][Superstar]]
+  - [[#org-alert][Org Alert]]
+  - [[#presenter][Presenter]]
+  - [[#org-babel][Org Babel]]
+- [[#org-roam][Org Roam]]
+- [[#lookup-searches][Lookup Searches]]
+- [[#clipboard][Clipboard]]
+- [[#projectile][Projectile]]
+- [[#vertico][Vertico]]
+- [[#modeline][Modeline]]
+- [[#packages][Packages]]
+- [[#references][References]]
+
+* Initialization
+
+This block is evaluated before every other configurations.
+
+#+begin_src emacs-lisp :tangle ./init.el :mkdirp yes
+
+;;; init.el -*- lexical-binding: t; -*-
+
+(doom! :input
+       ;;bidi              ; (tfel ot) thgir etirw uoy gnipleh
+       ;;chinese
+       ;;japanese
+       ;;layout            ; auie,ctsrnm is the superior home row
+
+       :completion
+       company           ; the ultimate code completion backend
+       ;;helm              ; the *other* search engine for love and life
+       ;;ido               ; the other *other* search engine...
+       ;;ivy               ; a search engine for love and life
+       (vertico +marginalia)           ; the search engine of the future
+
+       :ui
+       ;;deft              ; notational velocity for Emacs
+       doom              ; what makes DOOM look the way it does
+       ;;doom-dashboard    ; a nifty splash screen for Emacs
+       ;;doom-quit         ; DOOM quit-message prompts when you quit Emacs
+       (emoji +unicode)  ; 🙂
+       hl-todo           ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
+       ;;hydra
+       ;;indent-guides     ; highlighted indent columns
+       ;;ligatures         ; ligatures and symbols to make your code pretty again
+       ;;minimap           ; show a map of the code on the side
+       modeline          ; snazzy, Atom-inspired modeline, plus API
+       nav-flash         ; blink cursor line after big motions
+       ;;neotree           ; a project drawer, like NERDTree for vim
+       ophints           ; highlight the region an operation acts on
+       (popup +defaults)   ; tame sudden yet inevitable temporary windows
+       ;;tabs              ; a tab bar for Emacs
+       ;;treemacs          ; a project drawer, like neotree but cooler
+       unicode           ; extended unicode support for various languages
+       (vc-gutter +pretty) ; vcs diff in the fringe
+       vi-tilde-fringe   ; fringe tildes to mark beyond EOB
+       ;;window-select     ; visually switch windows
+       workspaces        ; tab emulation, persistence & separate workspaces
+       zen               ; distraction-free coding or writing
+
+       :editor
+       (evil +everywhere)               ; come to the dark side, we have cookies
+       file-templates    ; auto-snippets for empty files
+       fold              ; (nigh) universal code folding
+       (format +onsave)  ; automated prettiness
+       ;;god               ; run Emacs commands without modifier keys
+       ;;lispy             ; vim for lisp, for people who don't like vim
+       multiple-cursors  ; editing in many places at once
+       ;;objed             ; text object editing for the innocent
+       ;;parinfer          ; turn lisp into python, sort of
+       ;;rotate-text       ; cycle region at point between text candidates
+       snippets          ; my elves. They type so I don't have to
+       word-wrap         ; soft wrapping with language-aware indent
+
+       :emacs
+       dired             ; making dired pretty [functional]
+       electric          ; smarter, keyword-based electric-indent
+       ;;ibuffer         ; interactive buffer management
+       undo              ; persistent, smarter undo for your inevitable mistakes
+       vc                ; version-control and Emacs, sitting in a tree
+
+       :term
+       ;;eshell            ; the elisp shell that works everywhere
+       ;;shell             ; simple shell REPL for Emacs
+       ;;term              ; basic terminal emulator for Emacs
+       vterm             ; the best terminal emulation in Emacs
+
+       :checkers
+       syntax              ; tasing you for every semicolon you forget
+       ;;(spell +flyspell) ; tasing you for misspelling mispelling
+       ;;grammar           ; tasing grammar mistake every you make
+
+       :tools
+       ;;ansible
+       ;;biblio            ; Writes a PhD for you (citation needed)
+       ;;debugger          ; FIXME stepping through code, to help you add bugs
+       ;;direnv
+       ;;docker
+       editorconfig      ; let someone else argue about tabs vs spaces
+       ;;ein               ; tame Jupyter notebooks with emacs
+       (eval +overlay)     ; run code, run (also, repls)
+       ;;gist              ; interacting with github gists
+       lookup              ; navigate your code and its documentation
+       ;;lsp               ; M-x vscode
+       magit             ; a git porcelain for Emacs
+       ;;make              ; run make tasks from Emacs
+       ;;pass              ; password manager for nerds
+       ;;pdf               ; pdf enhancements
+       ;;prodigy           ; FIXME managing external services & code builders
+       rgb               ; creating color strings
+       ;;taskrunner        ; taskrunner for all your projects
+       ;;terraform         ; infrastructure as code
+       ;;tmux              ; an API for interacting with tmux
+       tree-sitter       ; syntax and parsing, sitting in a tree...
+       ;;upload            ; map local to remote projects via ssh/ftp
+
+       :os
+       (:if IS-MAC macos)  ; improve compatibility with macOS
+       ;;tty               ; improve the terminal Emacs experience
+
+       :lang
+       ;;agda              ; types of types of types of types...
+       ;;beancount         ; mind the GAAP
+       (cc +lsp)         ; C > C++ == 1
+       ;;clojure           ; java with a lisp
+       ;;common-lisp       ; if you've seen one lisp, you've seen them all
+       ;;coq               ; proofs-as-programs
+       ;;crystal           ; ruby at the speed of c
+       ;;csharp            ; unity, .NET, and mono shenanigans
+       ;;data              ; config/data formats
+       ;;(dart +flutter)   ; paint ui and not much else
+       ;;dhall
+       ;;elixir            ; erlang done right
+       ;;elm               ; care for a cup of TEA?
+       emacs-lisp        ; drown in parentheses
+       ;;erlang            ; an elegant language for a more civilized age
+       ;;ess               ; emacs speaks statistics
+       ;;factor
+       ;;faust             ; dsp, but you get to keep your soul
+       ;;fortran           ; in FORTRAN, GOD is REAL (unless declared INTEGER)
+       ;;fsharp            ; ML stands for Microsoft's Language
+       ;;fstar             ; (dependent) types and (monadic) effects and Z3
+       ;;gdscript          ; the language you waited for
+       ;;(go +lsp)         ; the hipster dialect
+       ;;(graphql +lsp)    ; Give queries a REST
+       ;;(haskell +lsp)    ; a language that's lazier than I am
+       ;;hy                ; readability of scheme w/ speed of python
+       ;;idris             ; a language you can depend on
+       json              ; At least it ain't XML
+       ;;(java +lsp)       ; the poster child for carpal tunnel syndrome
+       javascript        ; all(hope(abandon(ye(who(enter(here))))))
+       ;;julia             ; a better, faster MATLAB
+       ;;kotlin            ; a better, slicker Java(Script)
+       ;;latex             ; writing papers in Emacs has never been so fun
+       ;;lean              ; for folks with too much to prove
+       ;;ledger            ; be audit you can be
+       lua               ; one-based indices? one-based indices
+       markdown          ; writing docs for people to ignore
+       ;;nim               ; python + lisp at the speed of c
+       nix               ; I hereby declare "nix geht mehr!"
+       ;;ocaml             ; an objective camel
+       (org
+        +journal             ; enable org journal
+        +pretty              ; replace asterisks with pretty org bullets
+        +publish)
+       ;;php               ; perl's insecure younger brother
+       ;;plantuml          ; diagrams for confusing people more
+       ;;purescript        ; javascript, but functional
+       (python +lsp)            ; beautiful is better than ugly
+       ;;qt                ; the 'cutest' gui framework ever
+       ;;racket            ; a DSL for DSLs
+       ;;raku              ; the artist formerly known as perl6
+       ;;rest              ; Emacs as a REST client
+       ;;rst               ; ReST in peace
+       ;;(ruby +rails)     ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
+       (rust +lsp)       ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
+       ;;scala             ; java, but good
+       ;;(scheme +guile)   ; a fully conniving family of lisps
+       sh                ; she sells {ba,z,fi}sh shells on the C xor
+       ;;sml
+       ;;solidity          ; do you need a blockchain? No.
+       ;;swift             ; who asked for emoji variables?
+       ;;terra             ; Earth and Moon in alignment for performance.
+       web               ; the tubes
+       yaml              ; JSON, but readable
+       ;;zig               ; C, but simpler
+
+       :email
+       ;;(mu4e +org +gmail)
+       ;;notmuch
+       ;;(wanderlust +gmail)
+
+       :app
+       ;;calendar
+       ;;emms
+       ;;everywhere        ; *leave* Emacs!? You must be joking
+       ;;irc               ; how neckbeards socialize
+       ;;(rss +org)        ; emacs as an RSS reader
+       ;;twitter           ; twitter client https://twitter.com/vnought
+
+       :config
+       ;;literate
+       (default +bindings +smartparens))
+
+#+end_src
+
+#+RESULTS:
+
+* Optimization
+
+#+begin_src emacs-lisp
+
+;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
+
+(setq gc-cons-threshold 100000000)
+
+(setq read-process-output-max (* 1024 1024)) ;; 1mb
+
+#+end_src
+
+* Identities
+
+#+begin_src emacs-lisp
+
+(setq user-full-name "Aniket Kharel"
+      user-mail-address "aniketkhareldev@gmail.com")
+
+#+end_src
+
+* Global Variables
+
+#+begin_src emacs-lisp
+
+(setq global_font "JetBrainsMono Nerd Font")
+(setq global_font_size 15)
+(setq global_font_weight 'Regular)
+(setq global_variable_pitch_font "JetBrainsMono Nerd Font")
+(setq global_variable_pitch_font_weight 15)
+
+#+end_src
+
+* Custom Variables
+
+#+begin_src emacs-lisp
+
+(custom-set-variables
+ '(org-directory "~/org")
+ '(org-agenda-files (list org-directory)))
+
+#+end_src
+
+* User Interface
+
+** Dashboard
+
+#+begin_src emacs-lisp
+
+(setq initial-buffer-choice "~/.config/doom/start.org")
+
+(define-minor-mode start-mode
+  "Provide functions for custom start page."
+  :lighter " start"
+  :keymap (let ((map (make-sparse-keymap)))
+          ;;(define-key map (kbd "M-z") 'eshell)
+            (evil-define-key 'normal start-mode-map
+              (kbd "1") '(lambda () (interactive) (find-file "~/.config/doom/doom.org"))
+              (kbd "2") '(lambda () (interactive) (find-file "~/.config/doom/init.el"))
+              (kbd "3") '(lambda () (interactive) (find-file "~/.config/doom/packages.el")))
+          map))
+
+;; make start.org read-only; use 'SPC t r' to toggle off read-only.
+(add-hook 'start-mode-hook 'read-only-mode)
+(provide 'start-mode)
+
+#+end_src
+
+** Fonts
+
+#+begin_src emacs-lisp
+
+(setq doom-font (font-spec :family global_font :size global_font_size
+                           :weight global_font_weight)
+     doom-variable-pitch-font (font-spec :family global_variable_pitch_font
+                                         :size global_variable_pitch_font_weight ))
+
+#+end_src
+
+** Theme
+
+#+begin_src emacs-lisp
+
+(setq doom-theme 'doom-one)
+
+#+end_src
+
+** Line Numbers
+
+#+begin_src emacs-lisp
+
+(setq display-line-numbers-type 'relative)
+
+(dolist (mode '(org-mode-hook
+                eshell-mode-hook))
+  (add-hook mode (lambda () (display-line-numbers-mode 0))))
+
+#+end_src
+
+** Transparency and Alphas
+
+#+begin_src emacs-lisp
+
+(set-frame-parameter (selected-frame) 'alpha 100)
+(add-to-list 'default-frame-alist '(alpha 100 100))
+
+#+end_src
+
+#+RESULTS:
+: ((alpha 90 90) (buffer-predicate . doom-buffer-frame-predicate) (right-divider-width . 1) (bottom-divider-width . 1) (alpha 100 100) (vertical-scroll-bars) (tool-bar-lines . 0) (menu-bar-lines . 0) (left-fringe . 8) (right-fringe . 8))
+
+** Visual Fill Column
+
+#+begin_src emacs-lisp
+
+(setq visual-fill-column-width 110
+      visual-fill-column-center-text t)
+
+#+end_src
+
+* Eighty Column Rule
+
+#+begin_src emacs-lisp
+
+(add-hook 'prog-mode-hook #'display-fill-column-indicator-mode)
+
+#+end_src
+
+* Rainbow Mode
+
+#+begin_src emacs-lisp
+
+(use-package rainbow-mode
+  :hook org-mode prog-mode)
+
+#+end_src
+
+* Editorconfig
+
+#+begin_src emacs-lisp
+
+(editorconfig-mode 1)
+
+#+end_src
+
+* Org Mode
+
+** Basic
+
+#+begin_src emacs-lisp
+
+(defun aniketdev/org-mode-setup ()
+  (org-indent-mode)
+  (variable-pitch-mode 1)
+  (visual-line-mode 1))
+
+(use-package org
+  :hook (org-mode . aniketdev/org-mode-setup)
+  :config
+  (setq
+   org-ellipsis " ▼ "
+   org-superstar-headline-bullets-list '("◉" "●" "○" "◆" "●" "○" "◆")
+   org-superstar-itembullet-alist '((?+ . ?➤) (?- . ?✦))
+   org-log-done 'time
+   org-hide-emphasis-markers t); changes +/- symbols in item lists
+  ;; Download the sound at https://freesound.org/people/.Andre_Onate/sounds/484665/
+  ;; https://www.myinstants.com/en/instant/aww/
+  (setq org-clock-sound "~/dot.org/.config/doom/aww.wav")
+
+  (setq org-agenda-start-with-log-mode t)
+  (setq org-log-done 'time)
+  (setq org-log-into-drawer t)
+
+  (setq org-agenda-files
+        '("~/org/agendas/todos.org")
+        ;; org-fancy-priorities-list '("[A]" "[B]" "[C]")
+        ;; org-fancy-priorities-list '("❗" "[B]" "[C]")
+        org-fancy-priorities-list '("🟥" "🟧" "🟨")
+        org-priority-faces
+        '((?A :foreground "#ff6c6b" :weight bold)
+          (?B :foreground "#98be65" :weight bold)
+          (?C :foreground "#c678dd" :weight bold))
+        org-agenda-block-separator 8411)
+
+  (require 'org-habit)
+  (add-to-list 'org-modules 'org-habit)
+  (setq org-habit-graph-column 60)
+
+  (setq org-todo-keywords
+        '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!)")
+          (sequence "BACKLOG(b)" "PLAN(p)" "READY(r)" "ACTIVE(a)" "REVIEW(v)" "WAIT(w@/!)" "HOLD(h)" "|" "COMPLETED(c)" "CANC(k@)")))
+
+  (setq org-refile-targets
+        '(("Archive.org" :maxlevel . 1)
+          ("Tasks.org" :maxlevel . 1)))
+
+  ;; Save Org buffers after refiling!
+  (advice-add 'org-refile :after 'org-save-all-org-buffers)
+
+  (setq org-tag-alist
+        '((:startgroup)
+                                        ; Put mutually exclusive tags here
+          (:endgroup)
+          ("@errand" . ?E)
+          ("@home" . ?H)
+          ("@work" . ?W)
+          ("agenda" . ?a)
+          ("planning" . ?p)
+          ("publish" . ?P)
+          ("batch" . ?b)
+          ("note" . ?n)
+          ("idea" . ?i)))
+
+  ;; Configure custom agenda views
+  (setq org-agenda-custom-commands
+        '(("d" "Dashboard"
+           ((agenda "" ((org-deadline-warning-days 7)))
+            (todo "NEXT"
+                  ((org-agenda-overriding-header "Next Tasks")))
+            (tags-todo "agenda/ACTIVE" ((org-agenda-overriding-header "Active Projects")))))
+
+          ("n" "Next Tasks"
+           ((todo "NEXT"
+                  ((org-agenda-overriding-header "Next Tasks")))))
+
+          ("W" "Work Tasks" tags-todo "+work-email")
+
+          ;; Low-effort next actions
+          ("e" tags-todo "+TODO=\"NEXT\"+Effort<15&+Effort>0"
+           ((org-agenda-overriding-header "Low Effort Tasks")
+            (org-agenda-max-todos 20)
+            (org-agenda-files org-agenda-files)))
+
+          ("w" "Workflow Status"
+           ((todo "WAIT"
+                  ((org-agenda-overriding-header "Waiting on External")
+                   (org-agenda-files org-agenda-files)))
+            (todo "REVIEW"
+                  ((org-agenda-overriding-header "In Review")
+                   (org-agenda-files org-agenda-files)))
+            (todo "PLAN"
+                  ((org-agenda-overriding-header "In Planning")
+                   (org-agenda-todo-list-sublevels nil)
+                   (org-agenda-files org-agenda-files)))
+            (todo "BACKLOG"
+                  ((org-agenda-overriding-header "Project Backlog")
+                   (org-agenda-todo-list-sublevels nil)
+                   (org-agenda-files org-agenda-files)))
+            (todo "READY"
+                  ((org-agenda-overriding-header "Ready for Work")
+                   (org-agenda-files org-agenda-files)))
+            (todo "ACTIVE"
+                  ((org-agenda-overriding-header "Active Projects")
+                   (org-agenda-files org-agenda-files)))
+            (todo "COMPLETED"
+                  ((org-agenda-overriding-header "Completed Projects")
+                   (org-agenda-files org-agenda-files)))
+            (todo "CANC"
+                  ((org-agenda-overriding-header "Cancelled Projects")
+                   (org-agenda-files org-agenda-files)))))))
+
+  (setq org-capture-templates
+        `(("t" "Tasks / Projects")
+          ("tt" "Task" entry (file+olp "~/org/templates/Tasks.org" "Inbox")
+           "* TODO %?\n  %U\n  %a\n  %i" :empty-lines 1)
+
+          ("j" "Journal Entries")
+          ("jj" "Journal" entry
+           (file+olp+datetree "~/org/templates/Journal.org")
+           "\n* %<%I:%M %p> - Journal :journal:\n\n%?\n\n"
+           ;; ,(dw/read-file-as-string "~/Notes/Templates/Daily.org")
+           :clock-in :clock-resume
+           :empty-lines 1)
+          ("jm" "Meeting" entry
+           (file+olp+datetree "~/org/templates/Journal.org")
+           "* %<%I:%M %p> - %a :meetings:\n\n%?\n\n"
+           :clock-in :clock-resume
+           :empty-lines 1)
+
+          ("w" "Workflows")
+          ("we" "Checking Email" entry (file+olp+datetree "~/.org/templates/Journal.org")
+           "* Checking Email :email:\n\n%?" :clock-in :clock-resume :empty-lines 1)
+
+          ("m" "Metrics Capture")
+          ("mw" "Weight" table-line (file+headline "~/org/templates/Metrics.org" "Weight")
+           "| %U | %^{Weight} | %^{Notes} |" :kill-buffer t)))
+
+  (define-key global-map (kbd "C-c j")
+    (lambda () (interactive) (org-capture nil "jj"))))
+
+#+end_src
+
+** Superstar
+
+#+begin_src emacs-lisp
+
+(add-hook 'org-mode-hook
+          (lambda ()
+            (org-superstar-mode 1)
+        ))
+
+#+end_src
+
+** Org Alert
+
+#+begin_src emacs-lisp
+
+(use-package org-alert
+  :ensure t)
+(setq alert-default-style 'libnotify)
+(setq org-alert-interval 300
+      org-alert-notify-cutoff 10
+      org-alert-notify-after-event-cutoff 10)
+
+#+end_src
+
+** Presenter
+
+#+begin_src emacs-lisp
+
+(defun aniketdev/org-mode-visual-fill ()
+  (setq visual-fill-column-width 100
+        visual-fill-column-center-text t)
+  (visual-fill-column-mode 1))
+
+(use-package visual-fill-column
+  :hook (org-mode . aniketdev/org-mode-visual-fill))
+
+(defun my/org-present-prepare-slide ()
+  ;; Show only top-level headlines
+  (org-overview)
+
+  ;; Unfold the current entry
+  (org-fold-show-entry)
+
+  ;; Show only direct subheadings of the slide but don't expand them
+  (org-fold-show-children))
+
+(defun my/org-present-start ()
+  ;; Tweak font sizes
+  (setq-local face-remapping-alist '((default (:height 1.5) variable-pitch)
+                                     (header-line (:height 4.0) variable-pitch)
+                                     (org-document-title (:height 1.75) org-document-title)
+                                     (org-code (:height 1.55) org-code)
+                                     (org-verbatim (:height 1.55) org-verbatim)
+                                     (org-block (:height 1.25) org-block)
+                                     (org-block-begin-line (:height 0.7) org-block)))
+
+  ;; Set a blank header line string to create blank space at the top
+  (setq header-line-format " ")
+
+;; Replace list hyphen with dot
+(font-lock-add-keywords 'org-mode
+			'(("^ *\\([-]\\) "
+			    (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
+
+  ;; Display inline images automatically
+  (org-display-inline-images)
+
+  ;; Center the presentation and wrap lines
+  (visual-fill-column-mode 1)
+  (visual-line-mode 1))
+
+(defun my/org-present-end ()
+  ;; Reset font customizations
+  (setq-local face-remapping-alist '((default variable-pitch default)))
+
+  ;; Clear the header line string so that it isn't displayed
+  (setq header-line-format nil)
+
+  ;; Stop displaying inline images
+  (org-remove-inline-images)
+
+  ;; Stop centering the document
+  (visual-fill-column-mode 0)
+  (visual-line-mode 0))
+
+;; Turn on variable pitch fonts in Org Mode buffers
+(add-hook 'org-mode-hook 'variable-pitch-mode)
+
+;; Register hooks with org-present
+(add-hook 'org-present-mode-hook 'my/org-present-start)
+(add-hook 'org-present-mode-quit-hook 'my/org-present-end)
+(add-hook 'org-present-after-navigate-functions 'my/org-present-prepare-slide)
+
+#+end_src
+
+** Org Babel
+
+#+begin_src emacs-lisp
+
+(org-babel-do-load-languages
+  'org-babel-load-languages
+  '((emacs-lisp . t)
+    (python . t)))
+
+(setq org-confirm-babel-evaluate nil)
+
+#+end_src
+
+* Org Roam
+
+#+begin_src emacs-lisp
+
+(use-package org-roam
+  :ensure t
+  :init
+  (setq org-roam-v2-ack t)
+  (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags:10}" 'face 'org-tag)))
+  :custom
+  (org-roam-directory "~/org/org-roam")
+  (org-roam-completion-everywhere t)
+  (org-roam-capture-templates
+   '(("d" "default" plain
+      "%?"
+      :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
+      :unnarrowed t)
+     ;; programming languages
+     ("l" "programming language" plain
+      (file "~/dot.org/.config/doom/templates/pl.org")
+      :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
+      :unnarrowed t)
+     ;; book notes
+     ("b" "book notes" plain
+      (file "~/dot.org/.config/doom/templates/book.org")
+      :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
+      :unnarrowed t)
+     ;; project and tags
+     ("p" "project" plain
+      (file "~/dot.org/.config/doom/templates/projects.org")
+      :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: Project")
+      :unnarrowed t)
+     ))
+  :bind (("C-c n l" . org-roam-buffer-toggle)
+         ("C-c n f" . org-roam-node-find)
+         ("C-c n i" . org-roam-node-insert)
+         :map org-mode-map
+         ("C-M-i" . completion-at-point))
+  :config
+  (org-roam-db-autosync-enable))
+
+#+end_src
+
+* Lookup Searches
+
+#+begin_src emacs-lisp
+
+(after! +lookup
+  (setq +lookup-provider-url-alist
+        '(("Google" "https://www.google.com/search?q=%s")
+          ("DuckDuckGo" "https://duckduckgo.com/?q=%s"))))
+
+#+end_src
+
+* Clipboard
+
+#+begin_src emacs-lisp
+
+(setq x-select-enable-clipboard-manager nil)
+
+#+end_src
+
+* Projectile
+
+#+begin_src emacs-lisp
+
+(setq projectile-project-search-path '("~/Projects"))
+
+#+end_src
+
+* Vertico
+
+#+begin_src emacs-lisp
+
+(use-package marginalia
+  :after vertico
+  :ensure t
+  :custom
+  (marginalia-annotators '(marginalia-annotators-heavy marginalia-annotators-light nil))
+  :init
+  (marginalia-mode))
+
+#+end_src
+
+* Modeline
+
+#+begin_src emacs-lisp
+
+(setq doom-modeline-support-imenu t)
+(setq doom-modeline-height 25)
+(setq doom-modeline-bar-width 4)
+(setq doom-modeline-hud nil)
+(setq doom-modeline-window-width-limit 85)
+(setq doom-modeline-icon t)
+(setq doom-modeline-major-mode-icon t)
+(setq doom-modeline-major-mode-color-icon t)
+(setq doom-modeline-buffer-state-icon nil)
+(setq doom-modeline-buffer-modification-icon t)
+(setq doom-modeline-time-icon t)
+(setq doom-modeline-unicode-fallback nil)
+(setq doom-modeline-buffer-name t)
+(setq doom-modeline-highlight-modified-buffer-name t)
+(setq doom-modeline-minor-modes nil)
+(setq doom-modeline-enable-word-count nil)
+
+#+end_src
+
+* Packages
+
+#+begin_src emacs-lisp :tangle ./packages.el :mkdirp yes
+
+;; -*- no-byte-compile: t; -*-
+;;; $DOOMDIR/packages.el
+
+;; personal wiki
+(package! org-roam)
+
+;; tide
+(package! tide)
+
+;; org-superstar
+(package! org-superstar)
+
+;; visual-fill-column
+(package! visual-fill-column)
+
+;; org-present
+(package! org-present)
+
+;; org-lert
+(package! org-alert)
+
+;; web-tools
+(package! org-web-tools)
+
+;; marginalia
+(package! marginalia)
+
+;; rainbow mode
+(package! rainbow-mode)
+
+#+end_src
+
+* References
+
+- [[https://systemcrafters.net/emacs-tips/streamline-completions-with-vertico/][Streamline completion with vertico.]]
+- [[https://systemcrafters.net/build-a-second-brain-in-emacs/capturing-notes-efficiently/][Capturing notes with org roam.]]

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+if ! command -v xdotool &> /dev/null; then
+    echo "nil"
+else
+    active_output=$(xdotool getactivewindow getwindowname)
+    substring="${active_output:0:40}"
+    echo $substring
+fi

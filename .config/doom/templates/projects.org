@@ -1,0 +1,7 @@
+#+title: Projects
+
+* Goals
+%?
+
+* Tasks
+** TODO Add initial tasks

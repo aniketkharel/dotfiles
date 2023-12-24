@@ -1,0 +1,84 @@
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+
+vim.opt.rtp:prepend(lazypath)
+
+local plugins = {
+  "windwp/nvim-autopairs",
+  "nvim-lua/plenary.nvim",
+  "jose-elias-alvarez/null-ls.nvim",
+  "norcalli/nvim-colorizer.lua",
+  "akinsho/toggleterm.nvim",
+  "numToStr/Comment.nvim", -- comment
+  "JoosepAlviste/nvim-ts-context-commentstring",
+  "p00f/clangd_extensions.nvim",
+  "RRethy/vim-illuminate",
+  "lewis6991/impatient.nvim",
+  "onsails/lspkind.nvim",
+  "hrsh7th/cmp-nvim-lsp",
+  "hrsh7th/cmp-buffer", -- buffer completions
+  "hrsh7th/cmp-path",   -- path completions
+  "hrsh7th/cmp-cmdline", -- cmdline completions
+  "hrsh7th/nvim-cmp",   -- The completion plugin
+  "hrsh7th/cmp-nvim-lua",
+  { "williamboman/mason.nvim",                  "williamboman/mason-lspconfig.nvim" },
+  "nvim-treesitter/nvim-treesitter",
+  "kylechui/nvim-surround",
+  "ggandor/leap.nvim",
+  {
+    "m-demare/hlargs.nvim",
+    requires = { "nvim-treesitter/nvim-treesitter" },
+  },
+  "danilamihailov/beacon.nvim",
+  "vim-test/vim-test",
+  "christoomey/vim-tmux-navigator",
+  "neovim/nvim-lspconfig",
+  "glepnir/lspsaga.nvim",
+  -- rust tools
+  "simrat39/rust-tools.nvim",
+  "mfussenegger/nvim-dap",
+  "folke/zen-mode.nvim",
+  { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+  -- snippets
+  {
+    "L3MON4D3/LuaSnip",
+    wants = { "friendly-snippets", "vim-snippets" },
+  },
+  "rafamadriz/friendly-snippets",
+  "honza/vim-snippets",
+  "saadparwaiz1/cmp_luasnip",
+  {
+    "iamcco/markdown-preview.nvim",
+    build = "pnpm up && cd app && pnpm install",
+    init = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
+    ft = { "markdown" },
+  },
+  --gitsign
+  "lewis6991/gitsigns.nvim",
+  -- telekastan
+  {
+    "renerocksai/telekasten.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim" },
+  },
+  "renerocksai/calendar-vim",
+  {
+    'maxmx03/solarized.nvim',
+  },
+  "nvim-tree/nvim-tree.lua",
+  { "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
+  "nvim-lualine/lualine.nvim",
+}
+
+local opts = {}
+require("lazy").setup(plugins, opts)
