@@ -10,7 +10,7 @@
  '(org-directory "~/org")
  '(package-selected-packages '(org-present visual-fill-column))
  '(warning-suppress-types '(((yasnippet zombie)) ((yasnippet zombie)) (defvaralias))))
-(custom-set-faces
+qqqjkjjjjjjkkkkkk(custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.

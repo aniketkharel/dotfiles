@@ -14,6 +14,7 @@ set -g DOTNET_ROOT $HOME/.dotnet
 
 # paths
 set -gx PATH $HOME/.nvm $PATH
+set -gx PATH $HOME/.npm-global/bin:$PATH
 set -gx PATH $DOTNET_ROOT:$DOTNET_ROOT/tools $PATH
 set -gx PATH $HOME/dot.org/scripts $PATH
 set -gx PATH $HOME/.local/bin $PATH
