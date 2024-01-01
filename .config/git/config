@@ -7,5 +7,6 @@
   defaultBranch = master
 [commit]
 	sign = true
+  gpg = true
 [gpg]
 	format = ssh
