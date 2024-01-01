@@ -2,12 +2,10 @@
   name = aniketkharel
 	email = aniketkhareldev@gmail.com
 	signingkey = ~/.ssh/id_rsa.pub
+	user = aniketkharel
 [init]
   defaultBranch = master
 [commit]
 	sign = true
-	gpgsign = true
 [gpg]
 	format = ssh
-[github]
-	user = aniketkharel
