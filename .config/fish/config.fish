@@ -1,9 +1,6 @@
 # theme
 # fish_config theme choose "Dracula Official"
 
-# includes scripts
-source $HOME/.config/fish/functions/zoxide.fish
-
 # vars
 set -g TERM 'xterm-256color'
 set -g EDITOR 'nvim'
