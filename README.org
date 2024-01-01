@@ -13,7 +13,7 @@ Some programs that I used for my daily workflow.
 |   1 | i3, i3bar and i3blocks | Window Manager |
 |   2 | kitty                  | Terminal       |
 |   3 | neovim                 | Modal Editor   |
-|   4 | Doom Emacs             | As an OS, 2nd Editor :D    |
+|   4 | Doom Emacs             | As an OS :D    |
 
 * Fonts
 
