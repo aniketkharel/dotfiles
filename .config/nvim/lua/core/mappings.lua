@@ -28,6 +28,9 @@ M.general = {
     -- save
     ["<C-s>"] = { "<cmd> w <CR>", "Save file" },
 
+    -- find_files
+    [";f"] = { "<cmd> Telescope find_files <CR>", "Find files" },
+
     -- Copy all
     ["<C-c>"] = { "<cmd> %y+ <CR>", "Copy whole file" },
 
@@ -260,10 +263,10 @@ M.nvimtree = {
 
   n = {
     -- toggle
-    ["<C-n>"] = { "<cmd> NvimTreeToggle <CR>", "Toggle nvimtree" },
+    ["<C-n>"] = { "<cmd> NvimTreeFocus <CR>", "Toggle nvimtree" },
 
     -- focus
-    ["<leader>e"] = { "<cmd> NvimTreeFocus <CR>", "Focus nvimtree" },
+    ["<leader>e"] = { "<cmd> NvimTreeToggle <CR>", "Focus nvimtree" },
   },
 }
 
