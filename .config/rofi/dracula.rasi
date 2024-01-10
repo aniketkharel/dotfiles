@@ -28,12 +28,12 @@ inputbar {
 
 entry {
   background-color: inherit;
-  padding: 12px 3px;
+  padding: 5px 2px;
 }
 
 prompt {
   background-color: inherit;
-  padding: 12px;
+  padding: 5px;
 }
 
 listview {

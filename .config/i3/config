@@ -4,12 +4,12 @@ exec_always --no-startup-id autotiling
 
 # set the mod key to the winkey:
 set $mod       mod4
-set $font      Hack Nerd Font
+set $font      JetBrainsMono Nerd Font
 set $fontSize  7
 set $editor1   nvim
 set $editor2   emacs
-set $terminal kitty 
-set $terminal2  alacritty
+set $terminal2 kitty 
+set $terminal  alacritty
 set $browser   brave
 set $fmg       thunar
 
