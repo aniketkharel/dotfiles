@@ -5,7 +5,7 @@ exec_always --no-startup-id autotiling
 # set the mod key to the winkey:
 set $mod       mod4
 set $font      JetBrainsMono Nerd Font
-set $fontSize  7
+set $fontSize  8
 set $editor1   nvim
 set $editor2   emacs
 set $terminal2 kitty 
@@ -497,7 +497,7 @@ exec --no-startup-id ~/.screenlayout/monitor.sh
 
 # set wallpaper
 # exec --no-startup-id sleep 2 && nitrogen --restore
-exec_always --no-startup-id feh --bg-fill ~/dot.org/wallpapers/mojave2.jpg
+exec_always --no-startup-id feh --bg-fill ~/Pictures/current.png
 
 # set powersavings for display:
 # exec --no-startup-id xset s 480 dpms 600 600 600
@@ -528,7 +528,7 @@ exec --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
 # emacs daemon
 # exec --no-startup-id $editor2 --daemon &
 # variety wallpapers
-exec --no-startup-id variety &
+# exec --no-startup-id variety &
 # exec --no-startup-id emacsclient -c -a 'emacs'
 
 exec --no-startup-id sleep 1 && $terminal
