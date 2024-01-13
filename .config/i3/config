@@ -4,7 +4,7 @@ exec_always --no-startup-id autotiling
 
 # set the mod key to the winkey:
 set $mod       mod4
-set $font      JetBrainsMono Nerd Font
+set $font      JuliaMono 
 set $fontSize  8
 set $editor1   nvim
 set $editor2   emacs
@@ -626,10 +626,10 @@ bar {
         strip_workspace_numbers no
         # === solarized dark theme
         colors {
-          background #002b36
+          background #232136
             statusline #839496
             separator  #586e75
-            focused_workspace  #b58900 #b58900 #002b36
+            focused_workspace  #eb6f92 #b58900 #002b36
             active_workspace   #586e75 #586e75 #002b36
             inactive_workspace #073642 #002b36 #839496
             urgent_workspace   #dc322f #dc322f #fdf6e3
