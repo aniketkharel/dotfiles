@@ -3,6 +3,7 @@ require("rose-pine").setup {
   dark_variant = "main", -- main, moon, or dawn
   dim_inactive_windows = false,
   extend_background_behind_borders = true,
+  bg = false,
   styles = {
     bold = true,
     italic = true,
@@ -44,6 +45,14 @@ require("rose-pine").setup {
   highlight_groups = {
     -- Comment = { fg = "foam" },
     -- VertSplit = { fg = "muted", bg = "muted" },
+    StatusLine = { fg = "love", bg = "love", blend = 10 },
+    StatusLineNC = { fg = "subtle", bg = "surface" },
+    TelescopeBorder = { fg = "highlight_high", bg = "none" },
+    TelescopeNormal = { bg = "none" },
+    TelescopePromptNormal = { bg = "base" },
+    TelescopeResultsNormal = { fg = "subtle", bg = "none" },
+    TelescopeSelection = { fg = "text", bg = "base" },
+    TelescopeSelectionCaret = { fg = "rose", bg = "rose" },
   },
 
   before_highlight = function(group, highlight, palette)

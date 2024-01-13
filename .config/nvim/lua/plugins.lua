@@ -1,13 +1,13 @@
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
+  vim.fn.system {
     "git",
     "clone",
     "--filter=blob:none",
     "https://github.com/folke/lazy.nvim.git",
     "--branch=stable", -- latest stable release
     lazypath,
-  })
+  }
 end
 
 vim.opt.rtp:prepend(lazypath)
@@ -26,13 +26,13 @@ local plugins = {
   "onsails/lspkind.nvim",
   "hrsh7th/cmp-nvim-lsp",
   "hrsh7th/cmp-buffer", -- buffer completions
-  "hrsh7th/cmp-path",   -- path completions
+  "hrsh7th/cmp-path", -- path completions
   "hrsh7th/cmp-cmdline", -- cmdline completions
-  "hrsh7th/nvim-cmp",   -- The completion plugin
+  "hrsh7th/nvim-cmp", -- The completion plugin
   "hrsh7th/cmp-nvim-lua",
-  { 
-    "williamboman/mason.nvim", 
-    "williamboman/mason-lspconfig.nvim" 
+  {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
   },
   "nvim-treesitter/nvim-treesitter",
   "kylechui/nvim-surround",
@@ -75,7 +75,11 @@ local plugins = {
     dependencies = { "nvim-telescope/telescope.nvim" },
   },
   "renerocksai/calendar-vim",
-  { 'rose-pine/neovim', name = 'rose-pine'  }
+  { "rose-pine/neovim", name = "rose-pine" },
+  {
+    "nvim-lualine/lualine.nvim",
+  },
+  "nvim-lua/lsp-status.nvim",
 }
 
 local opts = {}
