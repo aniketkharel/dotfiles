@@ -41,15 +41,11 @@ local plugins = {
     "m-demare/hlargs.nvim",
     requires = { "nvim-treesitter/nvim-treesitter" },
   },
-  "danilamihailov/beacon.nvim",
-  "vim-test/vim-test",
   "christoomey/vim-tmux-navigator",
   "neovim/nvim-lspconfig",
   "glepnir/lspsaga.nvim",
-  -- rust tools
   "simrat39/rust-tools.nvim",
   "mfussenegger/nvim-dap",
-  "folke/zen-mode.nvim",
   { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
   -- snippets
   {
@@ -69,16 +65,6 @@ local plugins = {
   },
   --gitsign
   "lewis6991/gitsigns.nvim",
-  -- telekastan
-  {
-    "renerocksai/telekasten.nvim",
-    dependencies = { "nvim-telescope/telescope.nvim" },
-  },
-  "renerocksai/calendar-vim",
-  {
-    "nvim-lualine/lualine.nvim",
-  },
-  "nvim-lua/lsp-status.nvim",
 }
 
 local opts = {}

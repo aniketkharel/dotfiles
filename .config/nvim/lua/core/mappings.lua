@@ -29,9 +29,6 @@ keymap("n", "<leader>tx", ":tabclose<CR>", opts) -- close current tab
 keymap("n", "<leader>tn", ":tabn<CR>", opts) --  go to next tab
 keymap("n", "<leader>tp", ":tabp<CR>", opts) --  go to previous tab
 
--- nvim-tree
-keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts) --  go to previous tab
-
 -- bufferline
 keymap("n", "<leader>bk", ":close<CR>", opts) --  go to previous tab
 
