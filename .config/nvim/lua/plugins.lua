@@ -47,7 +47,11 @@ local plugins = {
   "simrat39/rust-tools.nvim",
   "mfussenegger/nvim-dap",
   { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-  -- snippets
+  {
+    "nvim-telescope/telescope.nvim",
+    tag = "0.1.5",
+    dependencies = { "nvim-lua/plenary.nvim" },
+  },
   {
     "L3MON4D3/LuaSnip",
     wants = { "friendly-snippets", "vim-snippets" },

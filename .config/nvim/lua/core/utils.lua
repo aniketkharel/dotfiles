@@ -68,3 +68,12 @@ vim.opt.foldenable = false
 vim.cmd([[set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case]])
 vim.cmd([[set grepformat=%f:%l:%c:%m]])
 vim.cmd([[set spell]])
+
+-- Set background color of "Normal" text in GUI to none
+vim.cmd("highlight Normal guibg=none")
+-- Set background color of "NonText" elements in GUI to none
+vim.cmd("highlight NonText guibg=none")
+-- Set background color of "Normal" text in terminal to none
+vim.cmd("highlight Normal ctermbg=none")
+-- Set background color of "NonText" elements in terminal to none
+vim.cmd("highlight NonText ctermbg=none")
