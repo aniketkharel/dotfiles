@@ -75,7 +75,6 @@ local plugins = {
     dependencies = { "nvim-telescope/telescope.nvim" },
   },
   "renerocksai/calendar-vim",
-  { "rose-pine/neovim", name = "rose-pine" },
   {
     "nvim-lualine/lualine.nvim",
   },

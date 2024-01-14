@@ -40,19 +40,19 @@ TERM = "xterm-256color"
 size = 12.0
 
 [font.bold]
-family = "JuliaMono"
+family = "JetBrains"
 style = "Bold"
 
 [font.bold_italic]
-family = "JuliaMono"
+family = "JetBrains"
 style = "Bold Italic"
 
 [font.italic]
-family = "JuliaMono"
+family = "JetBrains"
 style = "Italic"
 
 [font.normal]
-family = "JuliaMono"
+family = "JetBrains"
 style = "Regular"
 
 [font.offset]
@@ -152,7 +152,7 @@ mods = "Super|Shift"
 history = 5000
 
 [window]
-dynamic_padding = false
+dynamic_padding = true
 opacity = 1.0
 title = "Alacritty"
 
