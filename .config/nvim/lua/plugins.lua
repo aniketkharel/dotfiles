@@ -77,6 +77,7 @@ local plugins = {
       require("nvim-tree").setup {}
     end,
   },
+  { "rose-pine/neovim", name = "rose-pine" },
 }
 
 local opts = {}
