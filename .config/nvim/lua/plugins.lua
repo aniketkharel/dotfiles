@@ -69,6 +69,14 @@ local plugins = {
   },
   --gitsign
   "lewis6991/gitsigns.nvim",
+  {
+    "nvim-tree/nvim-tree.lua",
+    version = "*",
+    lazy = false,
+    config = function()
+      require("nvim-tree").setup {}
+    end,
+  },
 }
 
 local opts = {}
