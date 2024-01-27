@@ -10,3 +10,4 @@
   gpg = true
 [gpg]
 	format = ssh
+	signingkey = ~/.ssh/id_rsa.pub
