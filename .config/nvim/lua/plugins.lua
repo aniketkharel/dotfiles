@@ -77,12 +77,12 @@ local plugins = {
       require("nvim-tree").setup {}
     end,
   },
-  { "rose-pine/neovim",                         name = "rose-pine" },
   -- buffer and lualine
   {
     'nvim-lualine/lualine.nvim',
   },
-  { 'akinsho/bufferline.nvim', version = "*", }
+  { 'akinsho/bufferline.nvim', version = "*", },
+  { 'rose-pine/neovim', name = 'rose-pine' }
 }
 
 local opts = {}
