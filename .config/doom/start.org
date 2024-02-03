@@ -1,7 +1,5 @@
 #+STARTUP: inlineimages
 
-[[file:./images/gru.png]]
-
 ⦿ *IMPORTANT KEYBINDINGS*
 |------------+---------------------+------------------------------------|
 | M-x        | [[elisp:(counsel-M-x)][counsel-M-x]]         | Prompt for Emacs programs          |
