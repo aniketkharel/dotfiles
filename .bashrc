@@ -13,7 +13,7 @@ ZK_NOTEBOOK_DIR=$SECOND_BRAIN/zettlekastans
 export SECOND_BRAIN="$HOME/org"
 export ZK_NOTEBOOK_DIR="$SECOND_BRAIN/zettlekastans"
 
-# fzf
+# fzf default params
 export FZF_DEFAULT_OPTS='--height 60% --layout=reverse --border'
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
