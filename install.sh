@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# was using arch
 if command -v yay >/dev/null 2>&1; then
 	echo "Using yay as a package manager !"
 
