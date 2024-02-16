@@ -1,13 +1,11 @@
 [user]
   name = aniketkharel
 	email = aniketkhareldev@gmail.com
-	signingkey = ~/.ssh/id_rsa.pub
+	signingkey = /home/sancho/.ssh/id_rsa.pub
 [init]
   defaultBranch = master
 [commit]
-	sign = true
-  gpg = true
+  gpgSign = true
 	signingkey = ~/.ssh/id_rsa.pub
 [gpg]
 	format = ssh
-	signingkey = ~/.ssh/id_rsa.pub
