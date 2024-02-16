@@ -82,7 +82,7 @@ local plugins = {
     'nvim-lualine/lualine.nvim',
   },
   { 'akinsho/bufferline.nvim', version = "*", },
-  { 'rose-pine/neovim', name = 'rose-pine' }
+  { "ellisonleao/gruvbox.nvim" }
 }
 
 local opts = {}
