@@ -82,7 +82,8 @@ local plugins = {
     'nvim-lualine/lualine.nvim',
   },
   { 'akinsho/bufferline.nvim', version = "*", },
-  { "ellisonleao/gruvbox.nvim" }
+  { "ellisonleao/gruvbox.nvim" },
+  {'wuelnerdotexe/vim-astro'}
 }
 
 local opts = {}

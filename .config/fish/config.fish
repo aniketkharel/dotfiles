@@ -1,5 +1,6 @@
 # theme
 # fish_config theme choose "Dracula Official"
+load_nvm > /dev/stderr
 
 # vars
 set -g TERM 'xterm-256color'
@@ -56,9 +57,8 @@ abbr -a lzg 'lazygit'
 abbr -a lzd 'lazydocker'
 abbr -a ggpull 'git pull origin'
 abbr -a ggpush 'git push origin'
-abbr -a gcmsg 'git commit --message'
+abbr -a gcmsg 'git commit -S -m'
 abbr -a gco 'git checkout'
-abbr -a gcs 'git commit --gpg-sign'
 abbr -a gd 'git diff'
 abbr -a gcl 'git clone --recurse-submodules'
 abbr -a ga 'git add'
@@ -89,9 +89,8 @@ alias lzg 'lazygit'
 alias lzd 'lazydocker'
 alias ggpull 'git pull origin'
 alias ggpush 'git push origin'
-alias gcmsg 'git commit --message'
+alias gcmsg 'git commit -S -m'
 alias gco 'git checkout'
-alias gcs 'git commit --gpg-sign'
 alias gd 'git diff'
 alias gcl 'git clone --recurse-submodules'
 alias rofi 'rofi -config ~/.config/rofi/config.rasi'

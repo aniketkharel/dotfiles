@@ -17,7 +17,7 @@ SETUVAR _fish_abbr_gaa:git\x20add\x20\x2d\x2dall
 SETUVAR _fish_abbr_gb:git\x20branch
 SETUVAR _fish_abbr_gba:git\x20branch\x20\x2d\x2dall
 SETUVAR _fish_abbr_gcl:git\x20clone\x20\x2d\x2drecurse\x2dsubmodules
-SETUVAR _fish_abbr_gcmsg:git\x20commit\x20\x2d\x2dmessage
+SETUVAR _fish_abbr_gcmsg:git\x20commit\x20\x2dS\x20\x2dm
 SETUVAR _fish_abbr_gco:git\x20checkout
 SETUVAR _fish_abbr_gcs:git\x20commit\x20\x2d\x2dgpg\x2dsign
 SETUVAR _fish_abbr_gd:git\x20diff
@@ -39,8 +39,9 @@ SETUVAR _fish_abbr_zq:zoxide\x20query
 SETUVAR _fish_abbr_zqi:zoxide\x20query\x20\x2di
 SETUVAR _fish_abbr_zr:zoxide\x20remove
 SETUVAR _fisher_dracula_2F_fish_files:\x7e/\x2econfig/fish/themes/Dracula\x20Official\x2etheme\x1e\x7e/\x2econfig/fish/conf\x2ed/dracula\x2efish
+SETUVAR _fisher_edc_2F_bass_files:\x7e/\x2econfig/fish/functions/__bass\x2epy\x1e\x7e/\x2econfig/fish/functions/bass\x2efish
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish
-SETUVAR _fisher_plugins:jorgebucaran/fisher\x1edracula/fish
+SETUVAR _fisher_plugins:jorgebucaran/fisher\x1edracula/fish\x1eedc/bass
 SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR fish_color_autosuggestion:BD93F9
 SETUVAR fish_color_cancel:\x2dr
