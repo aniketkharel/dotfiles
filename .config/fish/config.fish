@@ -1,7 +1,3 @@
-# theme
-# fish_config theme choose "Dracula Official"
-load_nvm > /dev/stderr
-
 # vars
 set -g TERM 'xterm-256color'
 set -g EDITOR 'nvim'
