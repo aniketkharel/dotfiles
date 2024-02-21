@@ -77,11 +77,6 @@ local plugins = {
       require("nvim-tree").setup {}
     end,
   },
-  -- buffer and lualine
-  {
-    'nvim-lualine/lualine.nvim',
-  },
-  { 'akinsho/bufferline.nvim', version = "*", },
   { "ellisonleao/gruvbox.nvim" },
   {'wuelnerdotexe/vim-astro'}
 }
