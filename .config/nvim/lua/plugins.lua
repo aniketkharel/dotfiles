@@ -46,12 +46,6 @@ local plugins = {
   "glepnir/lspsaga.nvim",
   "simrat39/rust-tools.nvim",
   "mfussenegger/nvim-dap",
-  { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-  {
-    "nvim-telescope/telescope.nvim",
-    tag = "0.1.5",
-    dependencies = { "nvim-lua/plenary.nvim" },
-  },
   {
     "L3MON4D3/LuaSnip",
     wants = { "friendly-snippets", "vim-snippets" },
@@ -78,7 +72,10 @@ local plugins = {
     end,
   },
   { "ellisonleao/gruvbox.nvim" },
-  {'wuelnerdotexe/vim-astro'}
+  { 'wuelnerdotexe/vim-astro' },
+  {
+    "ibhagwan/fzf-lua"
+  }
 }
 
 local opts = {}
