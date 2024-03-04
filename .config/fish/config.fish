@@ -29,7 +29,7 @@ set -gx ZK_NOTEBOOK_DIR "$SECOND_BRAIN/zettlekastans"
 
 # fzf
 set -gx FZF_DEFAULT_OPTS '--height 60% --layout=reverse --border'
-set -gx FZF_DEFAULT_COMMAND 'fd --type f --strip-cwd-prefix'
+set -gx FZF_DEFAULT_COMMAND 'rg --type f --strip-cwd-prefix'
 set -gx FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND"
 
 # abbreviation

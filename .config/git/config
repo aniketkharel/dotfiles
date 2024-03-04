@@ -5,7 +5,5 @@
 [init]
   defaultBranch = master
 [commit]
-  gpgSign = true
+	gpgsign = true
 	signingkey = ~/.ssh/id_rsa.pub
-[gpg]
-	format = ssh

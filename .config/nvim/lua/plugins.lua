@@ -66,10 +66,7 @@ local plugins = {
   {
     "nvim-tree/nvim-tree.lua",
     version = "*",
-    lazy = false,
-    config = function()
-      require("nvim-tree").setup {}
-    end,
+    lazy = false
   },
   { "ellisonleao/gruvbox.nvim" },
   { 'wuelnerdotexe/vim-astro' },
