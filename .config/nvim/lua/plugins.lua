@@ -72,7 +72,8 @@ local plugins = {
   { 'wuelnerdotexe/vim-astro' },
   {
     "ibhagwan/fzf-lua"
-  }
+  },
+  'nvim-lualine/lualine.nvim'
 }
 
 local opts = {}
