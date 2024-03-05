@@ -66,14 +66,14 @@ local plugins = {
   {
     "nvim-tree/nvim-tree.lua",
     version = "*",
-    lazy = false
+    lazy = false,
   },
   { "ellisonleao/gruvbox.nvim" },
-  { 'wuelnerdotexe/vim-astro' },
+  { "wuelnerdotexe/vim-astro" },
   {
-    "ibhagwan/fzf-lua"
+    "ibhagwan/fzf-lua",
   },
-  'nvim-lualine/lualine.nvim'
+  "nvim-lualine/lualine.nvim"
 }
 
 local opts = {}
