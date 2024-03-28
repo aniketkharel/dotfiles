@@ -73,7 +73,11 @@ local plugins = {
   {
     "ibhagwan/fzf-lua",
   },
-  "nvim-lualine/lualine.nvim"
+  "nvim-lualine/lualine.nvim",
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+  }
 }
 
 local opts = {}
