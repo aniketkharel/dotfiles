@@ -47,11 +47,10 @@ local on_attach = function(client, bufnr)
   })
 end
 
--- Set up lspconfig.
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local lsp_flags = {
-  -- This is the default in Nvim 0.7+
+  -- INFO: This is the default in Nvim 0.7+
   debounce_text_changes = 150,
 }
 
@@ -70,7 +69,7 @@ lspconfig["tsserver"].setup({
 
 -- svelte
 lspconfig["svelte"].setup({
-  filetypes = { "svelte", "typescriptreact" },
+  filetypes = { "svelte" },
   on_attach = on_attach,
   capabilities = capabilities,
   flags = lsp_flags,
@@ -113,7 +112,7 @@ lspconfig["clangd"].setup({
 })
 
 lspconfig["emmet_ls"].setup({
-  filetypes = { "html", "javascript", "typescript", "typescriptreact" },
+  filetypes = { "html", "typescriptreact" },
   on_attach = on_attach,
   capabilities = capabilities,
   root_dir = cwd,

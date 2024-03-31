@@ -1,7 +1,10 @@
 local wezterm = require("wezterm")
 local act = wezterm.action
 local font1 = "JetBrains"
-local font = "SFMono Nerd Font"
+local _font1 = "SFMono Nerd Font"
+local font3 = "FantasqueSansM Nerd Font"
+ local font = "MartianMono Nerd Font"
+
 
 local mux = wezterm.mux
 

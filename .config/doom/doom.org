@@ -254,10 +254,10 @@ This block is evaluated before every other configurations.
 
 #+begin_src emacs-lisp
 
-(setq global_font "JetBrainsMono Nerd Font")
+(setq global_font "SFMono Nerd Font")
 (setq global_font_size 15)
 (setq global_font_weight 'Regular)
-(setq global_variable_pitch_font "JetBrainsMono Nerd Font")
+(setq global_variable_pitch_font "SFMono Nerd Font")
 (setq global_variable_pitch_font_weight 15)
 
 #+end_src

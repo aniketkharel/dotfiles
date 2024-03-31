@@ -90,7 +90,8 @@ local plugins = {
     config = function()
       require("inc_rename").setup()
     end,
-  }
+  },
+  'nvim-tree/nvim-web-devicons'
 }
 
 local opts = {}

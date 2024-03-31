@@ -197,7 +197,7 @@
            "| %U | %^{Weight} | %^{Notes} |" :kill-buffer t)))
 
   (define-key global-map (kbd "C-c j")
-    (lambda () (interactive) (org-capture nil "jj"))))
+              (lambda () (interactive) (org-capture nil "jj"))))
 
 (add-hook 'org-mode-hook
           (lambda ()
