@@ -91,7 +91,13 @@ local plugins = {
       require("inc_rename").setup()
     end,
   },
-  'nvim-tree/nvim-web-devicons'
+  'nvim-tree/nvim-web-devicons',
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  }
 }
 
 local opts = {}

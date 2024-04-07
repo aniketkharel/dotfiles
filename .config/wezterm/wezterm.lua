@@ -1,9 +1,9 @@
 local wezterm = require("wezterm")
 local act = wezterm.action
-local font1 = "JetBrains"
+local _font1 = "JetBrains"
 local _font1 = "SFMono Nerd Font"
-local font3 = "FantasqueSansM Nerd Font"
- local font = "MartianMono Nerd Font"
+local _font3 = "FantasqueSansM Nerd Font"
+local font = "MartianMono Nerd Font"
 
 
 local mux = wezterm.mux
@@ -34,7 +34,7 @@ return {
     saturation = 1,
     brightness = 0.9,
   },
-  color_scheme = "Dracula",
+  color_scheme = "Tokyo Night Storm",
   font = wezterm.font(font),
   font_size = 11,
   line_height = 1.2,
