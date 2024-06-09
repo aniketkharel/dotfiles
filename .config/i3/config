@@ -8,8 +8,8 @@ set $font      GeistMono Nerd Font
 set $fontSize  8
 set $editor1   nvim
 set $editor2   emacs
-set $terminal kitty 
-set $terminal2  alacritty
+set $terminal2 kitty 
+set $terminal  alacritty
 set $browser   brave
 set $fmg       thunar
 
