@@ -152,7 +152,7 @@ mods = "Super|Shift"
 history = 5000
 
 [window]
-dynamic_padding = true
+dynamic_padding = false
 opacity = 1.0
 title = "Alacritty"
 

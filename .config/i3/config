@@ -532,7 +532,7 @@ exec --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
 # emacs daemon
 # exec --no-startup-id $editor2 --daemon &
 # variety wallpapers
-# exec --no-startup-id variety &
+exec --no-startup-id variety &
 # exec --no-startup-id emacsclient -c -a 'emacs'
 
 exec --no-startup-id sleep 1 && $terminal
