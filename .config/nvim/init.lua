@@ -13,4 +13,7 @@ vim.cmd("highlight NonText guibg=none")
 vim.cmd("highlight Normal ctermbg=none")
 -- Set background color of "NonText" elements in terminal to none
 vim.cmd("highlight NonText ctermbg=none")
+-- status line global
+vim.cmd("set laststatus=3")
+
 

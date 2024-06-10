@@ -9,12 +9,6 @@ if not snip_status_ok then
 	return
 end
 
-local test = "testing"
-local test2 = "3333"
-
-print(test)
-print(test)
-
 require("luasnip/loaders/from_vscode").lazy_load()
 
 local check_backspace = function()
