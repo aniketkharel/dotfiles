@@ -4,7 +4,7 @@ exec_always --no-startup-id autotiling
 
 # set the mod key to the winkey:
 set $mod       mod4
-set $font      MartianMono Nerd Font 
+set $font      CaskaydiaCove Nerd Font 
 set $fontSize  8
 set $editor1   nvim
 set $editor2   emacs
@@ -383,7 +383,8 @@ bindsym $mod+ctrl+t exec emacsclient -c -a 'emacs' --eval '(+vterm/here nil)' &
 bindsym Print exec scrot ~/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
 
 # Power Profiles menu switcher (rofi)
-bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles
+# bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles
+bindsym $mod+Shift+p exec ~/.config/i3/scripts/rofi-run
 
 ##########################################
 # configuration for workspace behaviour: #
@@ -530,9 +531,9 @@ exec --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
 
 # Autostart apps as you like
 # emacs daemon
-# exec --no-startup-id $editor2 --daemon &
+exec --no-startup-id emacsclient --daemon &
 # variety wallpapers
-exec --no-startup-id variety &
+# exec --no-startup-id variety &
 # exec --no-startup-id emacsclient -c -a 'emacs'
 
 exec --no-startup-id sleep 1 && $terminal
@@ -550,6 +551,7 @@ exec --no-startup-id sleep 5 && $fmg
 
 # networkmanager-applet
 exec --no-startup-id nm-applet
+exec --no-startup-id volumeicon
 
 ##################
 # floating rules #

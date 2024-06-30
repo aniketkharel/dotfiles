@@ -7,10 +7,10 @@
 (setq user-full-name "Aniket Kharel"
       user-mail-address "aniketkhareldev@gmail.com")
 
-(setq global_font "JetBrainsMono Nerd Font")
+(setq global_font "CaskaydiaCove Nerd Font")
 (setq global_font_size 15)
 (setq global_font_weight 'Regular)
-(setq global_variable_pitch_font "JetBrainsMono Nerd Font")
+(setq global_variable_pitch_font "CaskaydiaCove Nerd Font")
 (setq global_variable_pitch_font_weight 15)
 
 (custom-set-variables
@@ -76,7 +76,7 @@
    org-hide-emphasis-markers t); changes +/- symbols in item lists
   ;; Download the sound at https://freesound.org/people/.Andre_Onate/sounds/484665/
   ;; https://www.myinstants.com/en/instant/aww/
-  (setq org-clock-sound "~/dot.org/.config/doom/aww.wav")
+  (setq org-clock-sound "~/dotfiles/.config/doom/aww.wav")
 
   (setq org-agenda-start-with-log-mode t)
   (setq org-log-done 'time)
@@ -298,17 +298,17 @@
       :unnarrowed t)
      ;; programming languages
      ("l" "programming language" plain
-      (file "~/dot.org/.config/doom/templates/pl.org")
+      (file "~/dotfiles/.config/doom/templates/pl.org")
       :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
       :unnarrowed t)
      ;; book notes
      ("b" "book notes" plain
-      (file "~/dot.org/.config/doom/templates/book.org")
+      (file "~/dotfiles/.config/doom/templates/book.org")
       :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
       :unnarrowed t)
      ;; project and tags
      ("p" "project" plain
-      (file "~/dot.org/.config/doom/templates/projects.org")
+      (file "~/dotfiles/.config/doom/templates/projects.org")
       :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: Project")
       :unnarrowed t)
      ))

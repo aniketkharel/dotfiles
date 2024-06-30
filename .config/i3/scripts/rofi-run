@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#
+#
+rofi -config ~/.config/rofi/config.rasi -show run

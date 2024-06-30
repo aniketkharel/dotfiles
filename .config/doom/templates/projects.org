@@ -1,5 +1,9 @@
 #+title: Projects
 
+* Summary
+
+%?
+
 * Goals
 %?
 
