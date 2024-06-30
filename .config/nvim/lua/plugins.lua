@@ -53,14 +53,6 @@ local plugins = {
   "rafamadriz/friendly-snippets",
   "honza/vim-snippets",
   "saadparwaiz1/cmp_luasnip",
-  {
-    "iamcco/markdown-preview.nvim",
-    build = "pnpm up && cd app && pnpm install",
-    init = function()
-      vim.g.mkdp_filetypes = { "markdown" }
-    end,
-    ft = { "markdown" },
-  },
   --gitsign
   "lewis6991/gitsigns.nvim",
   {
