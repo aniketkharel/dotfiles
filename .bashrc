@@ -156,7 +156,7 @@ fi
 
 # alises
 alias ff="freshfetch"
-alias emacs="emacsclient"
+# alias emacs="emacsclient"
 alias gs="git status"
 alias clone="git clone"
 alias lsa="ls -alh"

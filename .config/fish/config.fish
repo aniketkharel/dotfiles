@@ -110,4 +110,4 @@ set --export PATH $BUN_INSTALL/bin $PATH
 #starship rs
 starship init fish | source
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

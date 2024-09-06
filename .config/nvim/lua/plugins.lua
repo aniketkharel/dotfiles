@@ -25,10 +25,10 @@ local plugins = {
   "lewis6991/impatient.nvim",
   "onsails/lspkind.nvim",
   "hrsh7th/cmp-nvim-lsp",
-  "hrsh7th/cmp-buffer", -- buffer completions
-  "hrsh7th/cmp-path", -- path completions
+  "hrsh7th/cmp-buffer",  -- buffer completions
+  "hrsh7th/cmp-path",    -- path completions
   "hrsh7th/cmp-cmdline", -- cmdline completions
-  "hrsh7th/nvim-cmp", -- The completion plugin
+  "hrsh7th/nvim-cmp",    -- The completion plugin
   "hrsh7th/cmp-nvim-lua",
   {
     "williamboman/mason.nvim",
@@ -84,15 +84,9 @@ local plugins = {
     end,
   },
   "nvim-tree/nvim-web-devicons",
-  {
-    "folke/tokyonight.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {},
-  },
-  { "rose-pine/neovim", name = "rose-pine" },
+  { "ellisonleao/gruvbox.nvim" },
   -- using lazy.nvim
-  { "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
+  { "akinsho/bufferline.nvim", version = "*",     dependencies = "nvim-tree/nvim-web-devicons" },
 }
 
 local opts = {}
