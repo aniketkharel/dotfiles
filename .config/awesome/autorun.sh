@@ -5,7 +5,7 @@ feh --bg-fill ~/dot.org/wallpapers/arch.jpg
 # Notifications
 /usr/bin/dunst &
 # Polkit
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+/usr/lib/polkit-kde-authentication-agent-1 &
 # Wallpaper
 nitrogen --restore &
 # Dex
