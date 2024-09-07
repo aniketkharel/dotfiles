@@ -2,6 +2,7 @@ packer_compiled.lua
 squashfs-root
 nvim.appimage
 .config/tmux/plugins/
+.config/awesome/awesome-wm-widgets/
 __pycache__/
 History/
 globalStorage/
