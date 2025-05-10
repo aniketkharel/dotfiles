@@ -60,7 +60,13 @@ lspconfig["pyright"].setup({
   root_dir = cwd,
 })
 
-lspconfig["tsserver"].setup({
+lspconfig["gopls"].setup({
+  on_attach = on_attach,
+  flags = lsp_flags,
+  root_dir = cwd,
+})
+
+lspconfig["ts_ls"].setup({
   filetypes = { "typescript", "typescriptreact" },
   on_attach = on_attach,
   flags = lsp_flags,

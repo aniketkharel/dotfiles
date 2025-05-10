@@ -21,7 +21,7 @@ lspconfig.setup({
 	ensure_installed = {
 		"clangd",
 		"tailwindcss",
-		"tsserver",
+		"ts_ls",
 		"html",
 		"bashls",
 		"dockerls",
