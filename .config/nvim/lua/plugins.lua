@@ -87,7 +87,7 @@ local plugins = {
   "nvim-tree/nvim-web-devicons",
   { "ellisonleao/gruvbox.nvim" },
   -- using lazy.nvim
-  { "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
+  { "akinsho/bufferline.nvim", version = "*" },
   -- install without yarn or npm
   {
     "iamcco/markdown-preview.nvim",
