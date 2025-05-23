@@ -26,10 +26,10 @@ local plugins = {
   "lewis6991/impatient.nvim",
   "onsails/lspkind.nvim",
   "hrsh7th/cmp-nvim-lsp",
-  "hrsh7th/cmp-buffer",  -- buffer completions
-  "hrsh7th/cmp-path",    -- path completions
+  "hrsh7th/cmp-buffer", -- buffer completions
+  "hrsh7th/cmp-path", -- path completions
   "hrsh7th/cmp-cmdline", -- cmdline completions
-  "hrsh7th/nvim-cmp",    -- The completion plugin
+  "hrsh7th/nvim-cmp", -- The completion plugin
   "hrsh7th/cmp-nvim-lua",
   {
     "williamboman/mason.nvim",
@@ -110,6 +110,10 @@ local plugins = {
     event = { "CmdlineEnter" },
     ft = { "go", "gomod" },
     build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
+  },
+  {
+    "stevearc/conform.nvim",
+    opts = {},
   },
 }
 
